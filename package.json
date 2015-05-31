@@ -1,0 +1,27 @@
+{
+  "name": "BookmarkNodeApp",
+  "version": "0.0.0",
+  "description": "\"This provides the rest api's for bookmark application\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CharanyaR/BookmarkNodeApp.git"
+  },
+  "author": "Charanya",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/CharanyaR/BookmarkNodeApp/issues"
+  },
+  "homepage": "https://github.com/CharanyaR/BookmarkNodeApp",
+  "dependencies": {
+    "express": "~4.12.4",
+    "mongoose": "~4.0.4",
+    "bcrypt-nodejs": "0.0.3",
+    "passport": "~0.2.2",
+    "passport-http": "~0.2.2",
+    "body-parser": "~1.12.4"
+  }
+}
