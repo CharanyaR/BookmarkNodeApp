@@ -60,7 +60,7 @@ exports.getBookmark = function(req, res) {
 // Create endpoint bookmarks/:bookmark_title for PUT
 exports.putBookmark = function(req, res) {
     // Use the bookmark model to find a specific bookmark
-    Bookmark.update({ userId: req.user._id, title: req.params.bookmark_title }, { title: req.body.title },{ url: req.body.url },{ folderName: req.body.folderName }, function(err, numAffected, raw) {
+    Bookmark.update({ userId: req.user._id, title: req.params.bookmark_title }, {$set: { folderName: req.body.folderName }}, function(err, numAffected, raw) {
         if (err)
             res.send(err);
 

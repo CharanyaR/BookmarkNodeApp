@@ -48,7 +48,7 @@ exports.getFolder = function(req, res) {
 // Create endpoint /folders/:folder_name for PUT
 exports.putFolder = function(req, res) {
     // Use the folder model to find a specific folder
-    Folder.update({ userId: req.user._id, name: req.params.folder_name }, { name: req.body.name }, function(err, numAffected, raw) {
+    Folder.update({ userId: req.user._id, name: req.params.folder_name }, {$set:{ name: req.body.name }}, function(err, numAffected, raw) {
         if (err)
             res.send(err);
 
@@ -63,6 +63,6 @@ exports.deleteFolder = function(req, res) {
         if (err)
             res.send(err);
 
-        res.json({ message: 'bookmark removed!' });
+        res.json({ message: 'Folder removed!' });
     });
 };
