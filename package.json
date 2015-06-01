@@ -4,7 +4,7 @@
   "description": "\"This provides the rest api's for bookmark application\"",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "supervisor server.js"
   },
   "repository": {
     "type": "git",
