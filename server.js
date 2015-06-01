@@ -13,7 +13,8 @@
     var folderController = require('./controllers/folder');
 
     // Connect to the charrdb MongoDB
-    mongoose.connect('mongodb://localhost:27017/charrdb');
+    //mongoose.connect('mongodb://localhost:27017/charrdb');
+    mongoose.connect('mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/bookmark');
 
     //create express application
     var app = express();
@@ -66,4 +67,4 @@
     app.use(router);
 
     // Start the server
-    app.listen(3000);
+    app.listen(process.env.OPENSHIFT_NODEJS_PORT);
