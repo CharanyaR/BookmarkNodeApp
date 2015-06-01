@@ -11,10 +11,14 @@
     var userController = require('./controllers/user');
     var authController = require('./controllers/auth');
     var folderController = require('./controllers/folder');
+    
+    var mongouri = 'mongodb://admin:MhfZe9CWFI_j@' + process.env.OPENSHIFT_MONGODB_DB_HOST + ':' + process.env.OPENSHIFT_MONGODB_DB_PORT + '/bookmark';
+    
+    console.log(mongouri);
 
     // Connect to the charrdb MongoDB
     //mongoose.connect('mongodb://localhost:27017/charrdb');
-    mongoose.connect('mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/bookmark');
+    mongoose.connect(mongouri);
 
     //create express application
     var app = express();
@@ -67,4 +71,7 @@
     app.use(router);
 
     // Start the server
-    app.listen(process.env.OPENSHIFT_NODEJS_PORT);
+    app.listen(process.env.OPENSHIFT_NODEJS_PORT,process.env.OPENSHIFT_NODEJS_IP,function(){
+	console.log('App listening to port:',process.env.OPENSHIFT_NODEJS_PORT);
+	console.log('app ip',process.env.OPENSHIFT_NODEJS_IP);
+    });
