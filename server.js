@@ -35,9 +35,9 @@
     var router = express.Router();
 
     // Initial dummy route for testing
- /*   router.get('/', function(req, res) {
-        res.end('BookmarkApp');
-    });*/
+    router.get('/', function(req, res) {
+        res.end('Welcome to BookmarkNodeApp refer the git repo for api of the service : https://github.com/CharanyaR/BookmarkNodeApp/');
+    });
 
     // Create endpoint handlers for /bookmarks
     router.route('/bookmarks')
